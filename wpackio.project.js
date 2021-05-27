@@ -1,3 +1,15 @@
+// include a few node-js APIs
+const {
+	getFileLoaderOptions,
+	issuerForNonStyleFiles,
+	issuerForStyleFiles,
+	getBabelPresets,
+	getDefaultBabelPresetOptions,
+	issuerForJsTsFiles,
+	issuerForNonJsTsFiles,
+	// eslint-disable-next-line import/no-extraneous-dependencies
+} = require('@wpackio/scripts');
+
 const pkg = require('./package.json');
 
 module.exports = {
@@ -43,6 +55,71 @@ module.exports = {
 		// 	webpackConfig: undefined,
 		// },
 		// If has more length, then multi-compiler
+
+		{
+			name: 'reactapp',
+			entry: {
+				main: ['./src/reactapp/index.jsx'],
+			},
+			// hasTypeScript: false,
+			webpackConfig: (config, merge, appDir, isDev) => {
+				const customRules = {
+					module: {
+						rules: [
+							// Config for SVGR in javascript/typescript files
+							{
+								test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+								issuer: issuerForJsTsFiles,
+								use: [
+									{
+										loader: 'babel-loader',
+										options: {
+											presets: getBabelPresets(
+												getDefaultBabelPresetOptions(
+													true,
+													isDev
+												),
+												undefined
+											),
+										},
+									},
+									{
+										loader: '@svgr/webpack',
+										options: { babel: false },
+									},
+									{
+										loader: 'file-loader',
+										options: getFileLoaderOptions(
+											appDir,
+											isDev,
+											false
+										),
+									},
+								],
+							},
+							// For everything else, we use file-loader only
+							{
+								test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+								issuer: issuerForNonJsTsFiles,
+								use: [
+									{
+										loader: 'file-loader',
+										options: getFileLoaderOptions(
+											appDir,
+											isDev,
+											true
+										),
+									},
+								],
+							},
+						],
+					},
+				};
+
+				// merge and return
+				return merge(config, customRules);
+			},
+		},
 	],
 	// Output path relative to the context directory
 	// We need relative path here, else, we can not map to publicPath
