@@ -24,9 +24,9 @@ jobs:
         run: |
           yarn archive
 
-      - name: list artifacts
+      - name: list package
         run: |
-          ls -la *.zip
+          ls -la package
 
       - name: Release
         uses: softprops/action-gh-release@v1
