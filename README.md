@@ -7,6 +7,13 @@ Built with https://wpack.io/
 
 - https://getcomposer.org/ 
 - yarn
+- docker
+
+# Setup Docker Container
+
+    ```bash
+    docker-compose up -d && docker-compose logs -f wordpress
+    ```
 
 # Start development server
 
