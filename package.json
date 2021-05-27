@@ -3,9 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@wpackio/scripts": "^6.3.0"
+    "@wpackio/scripts": "^6.3.0",
+    "fork-ts-checker-webpack-plugin": "^6.2.10",
+    "postcss": "^8.3.0",
+    "sass": "^1.34.0",
+    "typescript": "^4.3.2"
   },
   "scripts": {
-    "bootstrap": "wpackio-scripts bootstrap"
+    "bootstrap": "wpackio-scripts bootstrap",
+    "build": "wpackio-scripts build",
+    "start": "wpackio-scripts start",
+    "archive": "wpackio-scripts pack"
+  },
+  "dependencies": {
+    "@wpackio/entrypoint": "^6.3.0"
   }
 }
