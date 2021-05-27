@@ -2,6 +2,12 @@
  
 Built with https://wpack.io/
 
+# Shortcode
+
+    ```
+    [velafrica-collectionevents]
+    ```
+
 
 # Requirements
 
