@@ -9,8 +9,8 @@
  *
  * @wordpress-plugin
  * Plugin Name: Velafrica Collectionevents
- * Plugin URI:  https://github.com/platzhersh/velafrica-wpack-collectionevents
- * Description: Wordpress Plugin zum Laden der Sammelanlässe
+ * Plugin URI:  https://github.com/velafrica/velafrica-wpack-collectionevents
+ * Description: Wordpress Plugin zum Laden der Sammelanlässe. (Shortcode: [velafrica-collectionevents])
  * Version:     0.0.1
  * Author:      Platzh1rsch
  * Author URI:  https://platzh1rsch.ch
