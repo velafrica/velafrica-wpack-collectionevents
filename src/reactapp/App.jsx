@@ -4,7 +4,7 @@ import Box from './components/Box';
 import CollectionEventWidget from './components/CollectionEventWidget';
 
 const App = () => (
-	<Box heading="Sammelanlässe">
+	<Box>
 		<CollectionEventWidget />
 	</Box>
 );
