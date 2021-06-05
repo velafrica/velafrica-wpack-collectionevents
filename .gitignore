@@ -1,6 +1,5 @@
 # ignore packages
 node_modules
-vendor
 
 # ignore build artefacts
 dist
