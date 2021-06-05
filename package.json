@@ -1,6 +1,6 @@
 {
   "name": "velafrica-wpack-collectionevents",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "devDependencies": {
     "@wpackio/scripts": "^6.3.0",
