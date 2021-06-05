@@ -8,7 +8,7 @@ class Velafrica_Collectionevents_Plugin_Init {
 
 	public function __construct() {
 		// It is important that we init the Enqueue class right at the plugin/theme load time
-		$this->enqueue = new \WPackio\Enqueue( 'wpackplugin', 'dist', '0.0.4', 'plugin', VELAFRICA_COLLECTIONEVENTS_PLUGIN );
+		$this->enqueue = new \WPackio\Enqueue( 'wpackplugin', 'dist', '0.0.5', 'plugin', VELAFRICA_COLLECTIONEVENTS_PLUGIN );
 		// Enqueue a few of our entry points
 		add_action( 'wp_enqueue_scripts', [ $this, 'plugin_enqueue' ] );
 		// And heres a react app with shortcode
